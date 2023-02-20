@@ -1,0 +1,41 @@
+.grid-container {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    grid-template-rows: 100px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    place-items: center;
+}
+
+.choice-button {
+    height: 100%;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background-color: #eee;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playButton {
+    display: flex;
+    margin: 1rem auto;
+    padding: 2rem 4rem;
+    font-size: 2rem;
+    background-color: rgb(83, 171, 206);
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.playButton:hover {
+    box-sizing: 0 0 20px black;
+}
