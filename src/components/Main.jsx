@@ -1,20 +1,23 @@
 import React from "react"
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import {BrowserRouter as Router, Switch, Route, Link, useHistory} from "react-router-dom"
 import Game from "./Game"
 import Result from "./Result"
 
 function Main() {
+
+
     return (
         <Router>
-            <Routes>
+
+            <Switch>
                 <Route exact path="/">
                     <Game />
                 </Route>
             
-                <Route path="/result">
+                <Route exact path="/result">
                     <Result />
                 </Route>
-            </Routes>
+            </Switch>
            
         </Router>
 

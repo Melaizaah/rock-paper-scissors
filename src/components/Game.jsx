@@ -1,15 +1,16 @@
 import React, { useState, useCallback } from "react"
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 import "./styles.css";
 
 function Game() {
 
+    const history = useHistory("/");
     const [choice, setChoice] = useState("");
 
     const playGame = () => {
         console.log("Since you have chosen: " + choice)
-        const history = useHistory();
         history.push("/result")
+        history.go("/result")
     }
 
     const playChoice = useCallback((selected) => {
@@ -20,7 +21,7 @@ function Game() {
         <>
         <div className="grid-container">
             <div >
-                <button className="choice-button"><img className="handImage" src={require("../images/rock-hand.png")} />Rock</button>
+                <button className="choice-button"><img className="handImage" src={require("../images/rock-hand.png")} onClick={() => playChoice("rock")}/>Rock</button>
             </div>
             <div>
                 
