@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react"
+import { useHistory } from "react-router-dom"
 import "./styles.css";
 
 function Game() {
@@ -6,7 +7,9 @@ function Game() {
     const [choice, setChoice] = useState("");
 
     const playGame = () => {
-        console.log("I have chosen: " + choice)
+        console.log("Since you have chosen: " + choice)
+        const history = useHistory();
+        history.push("/result")
     }
 
     const playChoice = useCallback((selected) => {

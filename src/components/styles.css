@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(190, 90, 185);
+}
+
 .grid-container {
     display: grid;
     height: 100%;
@@ -15,7 +19,7 @@
     width: 100%;
     padding: 1rem 2rem;
     font-size: 1.5rem;
-    background-color: #eee;
+    background-color: #e79e62;
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -29,7 +33,7 @@
     margin: 1rem auto;
     padding: 2rem 4rem;
     font-size: 2rem;
-    background-color: rgb(83, 171, 206);
+    background-color: rgb(84, 184, 162);
     border: none;
     border-radius: 0.5rem;
     color: white;

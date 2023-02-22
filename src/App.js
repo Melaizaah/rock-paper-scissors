@@ -1,9 +1,19 @@
 import './App.css';
-import Game from "./components/Game"
+import {Routes, Route} from "react-router-dom"
+import Main from "./components/Main"
+
 
 function App() {
   return (
-    <Game/>
+    <div>
+      <Routes>
+
+        <Route exact path="/">
+          <Main />
+        </Route>
+      </Routes>
+    </div>
+
 
   );
 }
