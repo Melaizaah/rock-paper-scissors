@@ -1,5 +1,5 @@
 import React from "react"
-import {BrowserRouter as Router, Switch, Route, Link, useHistory} from "react-router-dom"
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Game from "./Game"
 import Result from "./Result"
 
@@ -7,17 +7,14 @@ function Main() {
 
 
     return (
+
         <Router>
 
-            <Switch>
-                <Route exact path="/">
-                    <Game />
-                </Route>
+            <Routes>
+                <Route path='/' element={<Game/>} />
             
-                <Route exact path="/result">
-                    <Result />
-                </Route>
-            </Switch>
+                <Route path="/result" element={ <Result />} />
+            </Routes>
            
         </Router>
 

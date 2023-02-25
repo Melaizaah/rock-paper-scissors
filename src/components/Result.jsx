@@ -1,15 +1,14 @@
 import React from "react"
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./styles.css"
 
 function Result() {
 
-    const history = useHistory("/result");
+    const history = useNavigate("/result");
 
     const playAgain = () => {
         console.log("You want to play again!")
-        history.push("/")
-        history.go("/")
+        history("/")
     }
 
     return (

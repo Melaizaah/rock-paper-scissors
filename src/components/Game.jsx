@@ -1,16 +1,15 @@
 import React, { useState, useCallback } from "react"
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
 function Game() {
 
-    const history = useHistory("/");
+    const history = useNavigate("/");
     const [choice, setChoice] = useState("");
 
     const playGame = () => {
         console.log("Since you have chosen: " + choice)
-        history.push("/result")
-        history.go("/result")
+        history("/result")
     }
 
     const playChoice = useCallback((selected) => {
@@ -21,15 +20,15 @@ function Game() {
         <>
         <div className="grid-container">
             <div >
-                <button className="choice-button"><img className="handImage" src={require("../images/rock-hand.png")} onClick={() => playChoice("rock")}/>Rock</button>
+                <button className="choice-button"><img className="handImage" src={require("../images/rock-hand.png")} alt="" onClick={() => playChoice("rock")}/>Rock</button>
             </div>
             <div>
                 
-                <button className="choice-button" ><img className="handImage" src={require("../images/paper-hand.png")} onClick={() => playChoice("paper")}/>Paper</button>
+                <button className="choice-button" ><img className="handImage" src={require("../images/paper-hand.png")} alt="" onClick={() => playChoice("paper")}/>Paper</button>
             </div>
             <div>
                 
-                <button className="choice-button"><img className="handImage" src={require("../images/scissor-hand.png")}  onClick={() => playChoice("scissor")}/>Scissor</button>
+                <button className="choice-button"><img className="handImage" src={require("../images/scissor-hand.png")} alt="" onClick={() => playChoice("scissor")}/>Scissor</button>
             </div>
         </div>
         <button className="playButton" onClick={playGame}>Play!!</button>
