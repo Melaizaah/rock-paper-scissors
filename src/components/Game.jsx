@@ -9,7 +9,7 @@ function Game() {
     const [computerChoice, setComputerChoice] = useState("");
 
     const playGame = () => {
-        setComputerChoice("rock")
+        setComputerChoice()
         console.log(computerChoice, choice)
         if(computerChoice === choice){
             console.log("Split")
@@ -29,17 +29,16 @@ function Game() {
         history("/result")
     }
 
-    const computerPlay = () => {
-        setComputerChoice("rock")
-        // const compute = Math.random();
-        // if (compute > 0.75){
-        //     setComputerChoice("rock")
-        // } else if (compute > 0.5){
-        //     setComputerChoice("paper")
-        // } else {
-        //     setComputerChoice("scissor")
-        // }
-    } 
+    useEffect(() => {
+        const compute = Math.random();
+        if (compute > 0.75){
+            setComputerChoice("rock")
+        } else if (compute > 0.5){
+            setComputerChoice("paper")
+        } else {
+            setComputerChoice("scissor")
+        }
+    }, [computerChoice])
 
     const playChoice = useCallback((selected) => {
         setChoice(selected);
