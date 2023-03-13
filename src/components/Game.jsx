@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
-function Game() {
+function Game({ outcome, setOutcome }) {
 
     const history = useNavigate("/");
     const [choice, setChoice] = useState("");
@@ -10,22 +10,25 @@ function Game() {
 
     const playGame = () => {
         setComputerChoice()
-        console.log(computerChoice, choice)
+        console.log(`Computer: ${computerChoice} | Yours: ${choice}`)
+        let newOutcome;
         if(computerChoice === choice){
-            console.log("Split")
+            newOutcome = "tie";
         } else if (computerChoice === "rock" && choice === "paper"){
-            console.log("You won!")
+            newOutcome = "won";
         } else if (computerChoice === "rock" && choice === "scissor"){
-            console.log("You lost :(")
+            newOutcome = "lost";
         } else if (computerChoice === "paper" && choice === "rock"){
-            console.log("You lost :(")
+            newOutcome = "lost";
         } else if (computerChoice === "paper" && choice === "scissor"){
-            console.log("You won!")
+            newOutcome = "won";
         } else if (computerChoice === "scissor" && choice === "rock"){
-            console.log("You won!")
+            newOutcome = "won";
         } else if (computerChoice === "scissor" && choice === "paper"){
-            console.log("You lost :(")
+            newOutcome = "lost";
         }
+        setOutcome(newOutcome);
+        console.log(newOutcome);
         history("/result")
     }
 
@@ -39,6 +42,7 @@ function Game() {
             setComputerChoice("scissor")
         }
     }, [computerChoice])
+
 
     const playChoice = useCallback((selected) => {
         setChoice(selected);
