@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
-function Game({ outcome, setOutcome }) {
+function Game({ outcome, setOutcome, gameRounds, setGameRounds }) {
 
     const history = useNavigate("/");
     const [choice, setChoice] = useState("");
@@ -28,6 +28,7 @@ function Game({ outcome, setOutcome }) {
             newOutcome = "lost";
         }
         setOutcome(newOutcome);
+        setGameRounds(gameRounds + 1);
         console.log(newOutcome);
         history("/result")
     }

@@ -5,6 +5,7 @@ import Result from "./Result"
 
 function Main() {
 
+    const [gameRounds, setGameRounds] = useState(0);
     const [outcome, setOutcome] = useState("");
     const [yourScore, setYourScore] = useState(0);
     const [computerScore, setComputerScore] = useState(0);
@@ -15,7 +16,7 @@ function Main() {
        } else if (outcome === "won"){
            setYourScore(yourScore + 1);
        }
-    }, [outcome])
+    }, [gameRounds])
 
     // const getScores = useCallback(() => {
     //     return [yourScore, computerScore];
@@ -26,7 +27,7 @@ function Main() {
         <Router>
 
             <Routes>
-                <Route path='/' element={<Game outcome={outcome} setOutcome={setOutcome}/>} />
+                <Route path='/' element={<Game outcome={outcome} setOutcome={setOutcome} gameRounds={gameRounds} setGameRounds={setGameRounds}/>} />
             
                 <Route path="/result" element={ <Result yourScore={yourScore} computerScore={computerScore}/>} />
             </Routes>
