@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 
-function Game({ outcome, setOutcome, gameRounds, setGameRounds }) {
+function Game({ outcome, setOutcome, gameRounds, setGameRounds, setYourScore, setComputerScore }) {
 
     const history = useNavigate("/");
     const [choice, setChoice] = useState("");
@@ -48,6 +48,11 @@ function Game({ outcome, setOutcome, gameRounds, setGameRounds }) {
     const playChoice = useCallback((selected) => {
         setChoice(selected);
     }, [])
+
+    const startOver = () => {
+        setComputerScore(0);
+        setYourScore(0);
+    }
  
     return(
         <>
@@ -59,6 +64,8 @@ function Game({ outcome, setOutcome, gameRounds, setGameRounds }) {
             <button className="choice-btn" ><img className="hand-img" src={require("../images/paper-hand.png")} alt="" onClick={() => playChoice("paper")}/>Paper</button>
             
             <button className="choice-btn"><img className="hand-img" src={require("../images/scissor-hand.png")} alt="" onClick={() => playChoice("scissor")}/>Scissor</button>
+
+            <button className="start-over-btn" onClick={startOver}>Start over</button>
         </div>
        
         </>

@@ -23,7 +23,7 @@ function Main() {
         <Router>
 
             <Routes>
-                <Route path='/' element={<Game outcome={outcome} setOutcome={setOutcome} gameRounds={gameRounds} setGameRounds={setGameRounds}/>} />
+                <Route path='/' element={<Game outcome={outcome} setOutcome={setOutcome} gameRounds={gameRounds} setGameRounds={setGameRounds} setYourScore={setYourScore} setComputerScore={setComputerScore} />} />
             
                 <Route path="/result" element={ <Result outcome={outcome} yourScore={yourScore} computerScore={computerScore}/>} />
             </Routes>

@@ -5,7 +5,7 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
     padding: 10px;
@@ -31,10 +31,10 @@ body {
     grid-column: 1 / -1;
     margin: 1rem 15rem;
     padding: 2rem 4rem;
-    font-size: 2rem;
+    font-size: 50px;
     background-color: rgb(84, 184, 162);
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 5px;
     color: white;
     cursor: pointer;
 }
@@ -46,6 +46,17 @@ body {
 .hand-img {
     height: 150px;
     width: 150px;
+}
+
+.start-over-btn {
+    grid-column: 1 / -1;
+    font-size: 20px;
+    border-radius: 10px;
+    height: 60%;
+    width: 60%;
+    align-self: center;
+    justify-self: center;
+    background-color: rgb(211, 78, 78);
 }
 
 .play-again-btn {
@@ -91,4 +102,5 @@ body {
 .your-score-label {
     background-color: rgb(177, 126, 195);
 }
+
 
