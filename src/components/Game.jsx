@@ -52,19 +52,15 @@ function Game({ outcome, setOutcome, gameRounds, setGameRounds }) {
     return(
         <>
         <div className="grid-container">
-            <div >
-                <button className="choice-button"><img className="handImage" src={require("../images/rock-hand.png")} alt="" onClick={() => playChoice("rock")}/>Rock</button>
-            </div>
-            <div>
-                
-                <button className="choice-button" ><img className="handImage" src={require("../images/paper-hand.png")} alt="" onClick={() => playChoice("paper")}/>Paper</button>
-            </div>
-            <div>
-                
-                <button className="choice-button"><img className="handImage" src={require("../images/scissor-hand.png")} alt="" onClick={() => playChoice("scissor")}/>Scissor</button>
-            </div>
+            <button className="play-btn" onClick={playGame}>Play!!</button>
+            
+            <button className="choice-btn"><img className="hand-img" src={require("../images/rock-hand.png")} alt="" onClick={() => playChoice("rock")}/>Rock</button>
+            
+            <button className="choice-btn" ><img className="hand-img" src={require("../images/paper-hand.png")} alt="" onClick={() => playChoice("paper")}/>Paper</button>
+            
+            <button className="choice-btn"><img className="hand-img" src={require("../images/scissor-hand.png")} alt="" onClick={() => playChoice("scissor")}/>Scissor</button>
         </div>
-        <button className="playButton" onClick={playGame}>Play!!</button>
+       
         </>
     )
 }

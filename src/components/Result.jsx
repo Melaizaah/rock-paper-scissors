@@ -2,14 +2,9 @@ import React  from "react"
 import { useNavigate } from "react-router-dom";
 import "./styles.css"
 
-function Result({ yourScore, computerScore }) {
+function Result({ outcome, yourScore, computerScore }) {
 
     const history = useNavigate("/result");
-    // const [scores, setScores] = useState([])
-
-    // useEffect(() => {
-    //     setScores(getScores);
-    // }, [getScores])
    
 
     const playAgain = () => {
@@ -19,18 +14,14 @@ function Result({ yourScore, computerScore }) {
         history("/")
     }
 
-   
-    // const updateScore = () => {
-
-    //     console.log(`Computers Score: ${computerScore}`)
-    //     console.log(`Your score: ${yourScore}`)
-    // }
     
     
     return (
-        <div>
-            {/* <button onClick={updateScore}>Update</button> */}
-            <button className="playAgainBtn" onClick={playAgain}>Play again?</button>
+        <div className="result-container">
+            <label className="result-label">Result of match: {outcome? outcome : "Didn't choose anything lol"}</label>
+            <label className="label-score computer-score-label">Computers Score: {computerScore}</label>
+            <label className="label-score your-score-label">Your Score: {yourScore}</label>
+            <button className="play-again-btn" onClick={playAgain}>Play again?</button>
         </div>   
 
     )

@@ -18,10 +18,6 @@ function Main() {
        }
     }, [gameRounds])
 
-    // const getScores = useCallback(() => {
-    //     return [yourScore, computerScore];
-    // }, [outcome])
-
     return (
 
         <Router>
@@ -29,7 +25,7 @@ function Main() {
             <Routes>
                 <Route path='/' element={<Game outcome={outcome} setOutcome={setOutcome} gameRounds={gameRounds} setGameRounds={setGameRounds}/>} />
             
-                <Route path="/result" element={ <Result yourScore={yourScore} computerScore={computerScore}/>} />
+                <Route path="/result" element={ <Result outcome={outcome} yourScore={yourScore} computerScore={computerScore}/>} />
             </Routes>
            
         </Router>
