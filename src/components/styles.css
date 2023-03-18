@@ -27,6 +27,10 @@ body {
     justify-content: center;
 }
 
+.choice-btn:active{
+    background-color: #ce7832;
+}
+
 .play-btn {
     grid-column: 1 / -1;
     margin: 1rem 15rem;
@@ -40,7 +44,8 @@ body {
 }
 
 .play-btn:hover {
-    box-sizing: 0 0 20px black;
+    background-color: rgb(61, 160, 139);;
+    color:rgb(220, 220, 220);
 }
 
 .hand-img {

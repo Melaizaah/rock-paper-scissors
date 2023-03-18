@@ -59,11 +59,11 @@ function Game({ outcome, setOutcome, gameRounds, setGameRounds, setYourScore, se
         <div className="grid-container">
             <button className="play-btn" onClick={playGame}>Play!!</button>
             
-            <button className="choice-btn"><img className="hand-img" src={require("../images/rock-hand.png")} alt="" onClick={() => playChoice("rock")}/>Rock</button>
+            <button className="choice-btn" onClick={() => playChoice("rock")}><img className="hand-img" src={require("../images/rock-hand.png")} alt="" />Rock</button>
             
-            <button className="choice-btn" ><img className="hand-img" src={require("../images/paper-hand.png")} alt="" onClick={() => playChoice("paper")}/>Paper</button>
+            <button className="choice-btn" onClick={() => playChoice("paper")}><img className="hand-img" src={require("../images/paper-hand.png")} alt=""/>Paper</button>
             
-            <button className="choice-btn"><img className="hand-img" src={require("../images/scissor-hand.png")} alt="" onClick={() => playChoice("scissor")}/>Scissor</button>
+            <button className="choice-btn" onClick={() => playChoice("scissor")}><img className="hand-img" src={require("../images/scissor-hand.png")} alt="" />Scissor</button>
 
             <button className="start-over-btn" onClick={startOver}>Start over</button>
         </div>
