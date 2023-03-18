@@ -1,3 +1,17 @@
+# How to run the following code
+
+Start by cloning down this project to a folder in your terminal or in a IDE.
+Go to where you want to clone the project and then run the following command:
+### `git clone https://github.com/Melaizaah/rock-paper-scissors.git`
+
+Go in to the folder/directory you just created by typing:
+### `cd rock-paper-scissors`
+You then want to install npm by running the command:
+### `npm install`
+After this you can start to play the game in your browser by running the command:
+### `npm start`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
